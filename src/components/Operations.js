@@ -31,7 +31,8 @@ class Operations extends Component {
         <input id='amountIpt' placeholder='Amount' name="amount" onChange={this.handleInputChange}></input>
         <input id='vendorIpt' placeholder='Vendor' name="vendor" onChange={this.handleInputChange}></input>
         <input id='categoryIpt' placeholder='Category' name="category" onChange={this.handleInputChange}></input>
-        <button id='depoBtn' onClick={this.depositTransaction}>Deposit</button><button id='withBtn' onClick={this.withTransaction}>Withdraw</button>
+        <a class="waves-effect waves-light btn" id='depoBtn' onClick={this.depositTransaction}>Deposit</a>
+        <a class="waves-effect waves-light btn" id='withBtn' onClick={this.withTransaction}>Withdraw</a>
       </div>
     )
   }

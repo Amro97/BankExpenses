@@ -9,13 +9,13 @@ class Transaction extends Component {
   render() {
     return (
       this.props.amount > 0
-      ? <div class='green'>
+      ? <div className='positive transaction'>
         {this.props.amount} {this.props.vendor} {this.props.category}
-        <i class="fas fa-minus-circle" onClick={this.deleteTransaction}></i>
+        <i className="fas fa-minus-circle" onClick={this.deleteTransaction}></i>
       </div>
-      : <div class='red'>
+      : <div className='negative transaction'>
       {this.props.amount} {this.props.vendor} {this.props.category}
-      <i class="fas fa-minus-circle" onClick={this.deleteTransaction}></i>
+      <i className="fas fa-minus-circle" onClick={this.deleteTransaction}></i>
     </div>
     )
   }

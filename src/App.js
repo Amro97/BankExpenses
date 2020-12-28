@@ -20,13 +20,13 @@ class App extends Component {
     const { amount, vendor, category } = transaction
     const tempTransaction = ({ id: ids++, amount, vendor, category })
     this.postTransaction(tempTransaction)
-    window.location.href='http://localhost:3000'
+    window.location.href = 'http://localhost:3000'
   }
   withTransaction = (transaction) => {
     const { amount, vendor, category } = transaction
     const tempTransaction = ({ id: ids++, amount: amount * (-1), vendor, category })
     this.postTransaction(tempTransaction)
-    window.location.href='http://localhost:3000'
+    window.location.href = 'http://localhost:3000'
   }
 
   deleteTransaction = (tId) => {
@@ -74,6 +74,12 @@ class App extends Component {
     return categories
   }
 
+  async checkBalance() {
+    if (await this.props.balance > 500)
+      return true
+    return false
+  }
+
   render() {
     return (
       <Router>
@@ -86,7 +92,7 @@ class App extends Component {
             </div>
             <div className="logo">Bank Expenses</div>
           </div>
-          {this.props.balance > 500 ? <h4 class='green'>Balance: {this.state.balance}$</h4> : <h4 class='red'>Balance: {this.state.balance}$</h4>}
+          {this.checkBalance ? <h4 className='positive'>Balance: {this.state.balance}$</h4> : <h4 className='negative'>Balance: {this.state.balance}$</h4>}
           <Route path="/" exact render={() => <Transactions expenses={this.state.data} deleteTransaction={this.deleteTransaction} />} />
           <Route path="/operations" exact render={() => <Operations depositTransaction={this.depositTransaction} withTransaction={this.withTransaction} />} />
           <Route path="/breakdown" exact render={() => <Breakdown categories={this.state.categories} />} />

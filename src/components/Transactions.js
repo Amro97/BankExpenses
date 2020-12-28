@@ -9,7 +9,7 @@ class Transactions extends Component {
     return this.props.expenses.map(e => <Transaction id={e.id} amount={e.amount} vendor={e.vendor} category={e.category} deleteTransaction={this.deleteTransaction}/>)
   }
   render() {
-    return (<div>{this.loadExpenses()}</div>)
+    return (<div className='transactions'>{this.loadExpenses()}</div>)
   }
 }
 

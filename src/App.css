@@ -3,14 +3,8 @@
 }
 
 .App-logo {
+  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
@@ -35,4 +29,64 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.positive{
+  color: rgb(97, 192, 138)
+}
+.negative{
+   color: red;
+ }
+
+ .transaction{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   box-shadow: 0 4px 10px 0px #777;
+   margin-bottom: 10px;
+   padding: 10px;
+ }
+
+ #bank{
+   background-color: rgb(241, 241, 241);
+   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+   height: 100vh;
+   display: grid;
+   grid-gap: 60px;
+grid-template-columns: 10fr 1fr;
+grid-template-rows: 1fr 6fr 2fr;
+   grid-template-areas: 
+   "h h"
+   "t c"
+   "t b"
+ }
+input{
+  width: 80%;
+  margin-bottom: 10px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  border: none;
+  border-bottom: 2px solid teal;;
+  background-color: rgb(241, 241, 241);
+  font-size:20px;
+}
+
+#balance{
+  grid-area: h;
+  text-align: center;
+  padding-top: 50px;
+}
+.nav-bar{
+  text-align: center;
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  padding: 10px;
+}
+.main-links{
+  display: grid;
+  grid-gap: 5px;
+}
+
+a{
+  margin: 5px;
 }
